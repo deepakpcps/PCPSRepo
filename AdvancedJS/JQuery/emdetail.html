@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>PHP REST API MySQL AJAX jQuery DEMO</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<style>
+		.input-group {
+			margin: 10px 0px 10px 0px;
+		}
+		.input-group label {
+			display: block;
+			text-align: left;
+			margin: 3px;
+		}
+		.input-group input {
+			height: 30px;
+			width: 300px;
+			padding: 5px 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid gray;
+		}
+		.btn {
+			padding: 10px;
+			font-size: 15px;
+			color: white;
+			background: #5F9EA0;
+			border: none;
+			border-radius: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.getJSON('http://localhost/pcpsrepodir/PCPSRepo/myjs/AdvancedJS/JQuery/searchjson.php', function(json) {
+				var tr=[];
+				for (var i = 0; i < json.length; i++) {
+					tr.push('<tr>');
+					tr.push('<td>' + json[i].employee_id + '</td>');
+					tr.push('<td>' + json[i].employee_name + '</td>');
+					tr.push('<td>' + json[i].hired_date + '</td>');
+                    tr.push('<td>' + json[i].designation + '</td>');
+                    tr.push('<td>' + json[i].salary + '</td>');
+                    tr.push('</tr>');
+				}
+				$('table').append($(tr.join('')));
+			});
+        });
+			
+	</script>
+</head>
+<body>
+
+	<h2>AJAX Rest API call demo</h2>
+	
+	<h3>Employee List</h3>
+	<div class="input-group">
+		<label>Add Employee</label>
+		<input type="text" id="name" name="name" value="">
+	</div>
+	<div class="input-group">
+		<button class="btn" type="button" id="addNew">Save</button>
+	</div>
+	
+	<p/>
+
+	<table border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<th>Employee Id</th>
+			<th>Employee Name</th>
+			<th>Hire Date</th>
+            <th>Designation</th>
+            <th>Salary</th>
+		</tr>
+	</table>
+
+</body>
+</html>
