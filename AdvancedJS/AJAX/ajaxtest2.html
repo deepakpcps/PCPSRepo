@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajaxtest2</title>
+
+    <script>  
+        function showEmployee() {  
+            str=document.getElementById("empid").value; 
+          if (str.length == 0) {  
+            document.getElementById("empdetail").innerHTML = "<b style='color:red;'>Invalid EmployeeID</b>";  
+            return;  
+          } else {  
+            var xmlhttp = new XMLHttpRequest();  
+            xmlhttp.onreadystatechange = function() {  
+              if (this.readyState == 4 && this.status == 200) {  
+                document.getElementById("empdetail").innerHTML = this.responseText;  
+              }  
+            };  
+            xmlhttp.open("GET", "searchjson.php?empid=" + str, true);  
+            xmlhttp.send();  
+          }  
+        }  
+        </script>  
+</head>
+<body>
+    <p><b>Start typing a name in the input field below:</b></p>  
+    <form action="">  
+    <label for="fname">Employee ID:</label>  
+    <input type="text" id="empid" name="empid">  
+    <input type="button" value="Get Employee" onclick="showEmployee()">
+    </form>  
+    <p><b>Employee Detail: </b><br>: <span id="empdetail"></span></p>  
+</body>
+</html>

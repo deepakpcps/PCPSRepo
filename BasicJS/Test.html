@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            //alert("Hello");
+            //alert(document.getElementById("name").innerHTML);
+            function message()
+            {
+                //alert(document.getElementById('name').innerHTML);
+                var inputval = document.getElementById("input1").value;
+                document.getElementById("address").innerHTML = inputval;
+            }
+
+            function testcheck() {
+            
+                var inputval = document.getElementById("input1").value;
+
+                if(parseInt(inputval) <= 0)
+                {
+                    alert("Invalid input");
+                }
+                else
+                {
+                    alert("valid input");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        
+        <p id="name">Hello</p>
+        <div id="address"></div>
+        <input type="text" id="input1">
+        <input type="button" value="Check" onclick="testcheck()">
+        
+    </body>
+</html>

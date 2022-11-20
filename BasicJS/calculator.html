@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script type="text/javascript" src="calculation.js"></script>
+        <script>
+            function calculate(op){
+                var a = parseInt(document.getElementById("firstnum").value);
+                var b = parseInt(document.getElementById("secondnum").value);
+                var result = 0;
+                
+                if(op=="+")
+                    result = "Addition:" + add(a,b);
+                else if(op=="-")
+                    result = "Substraction: " + substract(a,b);
+                else 
+                    result = 0;
+                
+                  conf =  confirm("Do you want to get the result?");
+                
+                if(conf==true)
+                  document.getElementById("result").innerHTML = result;
+                else
+                    document.getElementById("result").innerHTML = "No Result needed";
+                  //alert(a + b);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <p>FirstNumber: <input type="text" id="firstnum"></p>
+        <p>SecondNumber: <input type="text" id="secondnum"></p>
+        <p><input type="button" value="Add(+)" onclick="calculate('+')"></p>
+        <p><input type="button" value="Subtract(-)" onclick="calculate('-')"></p>
+        <!-- <p><input type="button" value="Multiply(*)" onclick="calculate('*')"></p>
+        <p><input type="button" value="Divide(/)" onclick="calculate('/')"></p> -->
+        <br/>
+        <p> Result is: <div id="result" style="background-color:grey;"></div></p>
+        
+    </body>
+</html>

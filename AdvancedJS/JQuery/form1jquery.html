@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("input:text").css("background","purple");
+            $("input:password").css("background","purple");
+
+            $("#btnsubmit").click(function(){
+                var uname=$("#username").val();
+                var password=$("#passwd").val();
+                alert("Username: " + uname  + " Password: " + password);
+            });
+
+            $("#btnclear").click(function(){
+                $("#username").val("");
+                $("#passwd").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr><th>Username</th><td><input type="text" id="username"></td></tr>
+        <tr><th>Password</th><td><input type="password" id="passwd"></td></tr>
+        <tr><td><input type="button" id="btnsubmit" value="Submit"></td><td><input type="button" id="btnclear" value="Clear"></td></tr>
+    </table>
+</body>
+</html>

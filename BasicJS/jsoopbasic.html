@@ -1,0 +1,28 @@
+<script>
+    function pageld() {
+    let employee = {
+        name:"Deepak Kumar Karna",
+        address:"Bhaktapur",
+        profession: "IT Professional",
+        qualification: "M.Tech"
+    };
+    employee['test']="test123";
+
+    //alert(employee.name);
+     document.getElementById("empname").innerHTML = employee.name;
+     document.getElementById("empaddr").innerHTML = employee.address;
+     document.getElementById("empprof").innerHTML = employee.profession;
+     document.getElementById("empqualification").innerHTML = employee.qualification;
+
+     
+}
+    </script>
+<body onload="pageld()">
+<p><b>Employee Name: </b><div id="empname"></div></p>
+<p><b>Employee Address: </b><div id="empaddr"></div></p>
+<p><b>Employee Profession: </b><div id="empprof"></div></p>
+<p><b>Employee Qualification: </b><div id="empqualification"></div></p>
+
+<br/>
+
+</body>
